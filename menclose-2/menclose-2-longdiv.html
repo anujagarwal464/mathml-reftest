@@ -7,10 +7,11 @@
       function doTest()
       {
         var box = document.getElementById("box").getBoundingClientRect();
+        var x =  " " + box.left + "," + box.top + " " ;
         document.getElementById("path").setAttribute("d",
-          "M" + ("0," + box.height) +
-          "Q" + ("15," + box.height/2) + " 0,0 " +
-          "L" + (box.width + ",0"));
+          "M" + (box.left + "," + (box.top + box.height)) +
+          "Q" + ((box.left + 15) + "," + (box.top + box.height)/2) + x +
+          "L" + ((box.left + box.width) + "," + box.top));
         document.documentElement.removeAttribute("class");
       }
       window.addEventListener("MozReftestInvalidate",doTest, false);
@@ -26,9 +27,9 @@
       </math>
     </div>
 
-    <div style="position: absolute; left: 18px; top: 18px;">
+    <div style="position: absolute; left: 0px; top: 0px;">
       <svg width="500px" height="500px">
-        <path id="path" style="fill: none; stroke-width: 13px; stroke: green; stroke-linecap: round;"></path>
+        <path id="path" style="fill: none; stroke-width: 10px; stroke: green; stroke-linecap: round;"></path>
       </svg>
     </div>
     

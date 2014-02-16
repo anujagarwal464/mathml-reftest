@@ -8,8 +8,8 @@
       {
         var box = document.getElementById("box").getBoundingClientRect();
         document.getElementById("path").setAttribute("d",
-          "M" + ("0," + box.height) +
-          "L" + (box.width + ",0") );
+          "M" + (box.left + "," + (box.height + box.top)) +
+          "L" + ((box.width + box.left) + "," + box.top));
         document.documentElement.removeAttribute("class");
       }
       window.addEventListener("MozReftestInvalidate",doTest, false);
@@ -27,7 +27,7 @@
       </math>
     </div>
 
-    <div style="position: absolute; left: 20px; top: 20px;">
+    <div style="position: absolute; left: 0px; top: 0px;">
       <svg width="500px" height="500px">
         <path id="path" style="fill: none; stroke-width: 10px; stroke: green; stroke-linecap: round;"></path>
       </svg>
