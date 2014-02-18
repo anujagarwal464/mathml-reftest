@@ -9,7 +9,6 @@
       {
         var box = document.getElementById("roundedbox").getBoundingClientRect();
         r = document.getElementById("box");
-        r.style.border = "10px solid #000";
         r.style.left = (box.left - 6) + "px";
         r.style.top = (box.top - 6) + "px";
         r.style.width = (box.width - 6) + "px";
@@ -30,7 +29,7 @@
       </math>
     </div>
 
-    <div id="box" style="position: absolute; left: 0px; top: 0px; border-radius:10px 10px 10px 10px;" >
+    <div id="box" style="position: absolute; border:10px solid #000; border-radius:10px 10px 10px 10px;" >
     </div>
     
 </body>
